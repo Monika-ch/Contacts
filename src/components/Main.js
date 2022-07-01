@@ -1,11 +1,19 @@
 import ContactsList from "../features/contacts/ContactsList";
 import Header from "./Header";
+import { Col, Row } from "reactstrap";
 
-function Main() {
+const Main = () => {
   return (
     <>
       <Header />
-      <ContactsList />
+      <Row>
+        <Col sm='4'>
+          {/* < ContactVertical /> */}
+        </Col>
+        <Col>
+          <ContactsList />
+        </Col>
+      </Row>
     </>
   );
 }

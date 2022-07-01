@@ -1,19 +1,23 @@
-import { CONTACTS } from '../../app/shared/CONTACTS';
+import { CONTACTS } from "../../app/shared/CONTACTS";
 import { Col, Row } from "reactstrap";
-import ContactCard from './ContactCard';
+import ContactCard from "./ContactCard";
 
 const ContactsList = () => {
-  return (
-    <Row className='ms-auto'>
-      {CONTACTS.map((contact) => {
-        return (
-          <Col md='2' className='m-1' key={contact.id}>
-            <ContactCard contact={contact} />
-          </Col>
-        )
-      })}
-    </Row>
-  )
-}
+  const sortedContacts = CONTACTS.sort((a, b) => {
+    const result = a.firstName.localeCompare(b.firstName);
+
+    return result !== 0 ? result : a.lastName.localeCompare(b.lastName);
+  }).map((contact) => {
+    return (
+      <Row>
+        <Col md='5' className='contactCardCol' key={contact.id}>
+          <ContactCard contact={contact} />
+        </Col>
+      </Row>
+    );
+  });
+
+  return <Row className='ms-auto mt-2'>{sortedContacts}</Row>;
+};
 
 export default ContactsList;
