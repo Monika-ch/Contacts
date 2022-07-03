@@ -12,3 +12,33 @@
 .contactCardCol {
   margin: 4px;
 }
+
+.contactCard {
+  background-color: #d6d6d60d !important;
+}
+
+.cardBtn:hover {
+  background-color: #e3e3e3;
+  border-bottom: 1px solid #0d6dfd52;
+  border-radius: 5px 5px 0 0;
+  -webkit-border-radius: 5px 5px 0 0;
+  -moz-border-radius: 5px 5px 0 0;
+  -ms-border-radius: 5px 5px 0 0;
+  -o-border-radius: 5px 5px 0 0;
+}
+
+.fa-pencil {
+  color: green;
+}
+
+.fa-trash-o {
+  color: red;
+}
+
+.hide {
+  visibility: hidden;
+}
+
+.contactCard:hover .hide {
+  visibility: visible;
+}

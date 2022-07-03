@@ -1,0 +1,87 @@
+.VerticalCol {
+  border-right: 1px solid #0000000e;
+  margin-right: 120px;
+  background-color: #d6d6d60e;
+}
+
+.createBtn {
+  box-sizing: border-box;
+  padding: 25px 26px;
+  display: flex;
+  outline: 0;
+  font-size: 1.32rem;
+  font-weight: 500;
+  line-height: 1.25rem;
+  color: #202124;
+  text-overflow: ellipsis;
+  vertical-align: middle;
+  white-space: nowrap;
+  text-decoration: none;
+  color: green;
+  letter-spacing: 1px;
+  border-left: 10px solid green;
+}
+
+.createBtn:hover {
+  border: 1px solid rgba(0, 60, 128, 0.294);
+  border-left: 10px solid green;
+  padding: 24px 26px;
+  border-radius: 0 6px 6px 0;
+  -webkit-border-radius: 0 6px 6px 0;
+  -moz-border-radius: 0 6px 6px 0;
+  -ms-border-radius: 0 6px 6px 0;
+  -o-border-radius: 0 6px 6px 0;
+}
+
+.contactBtn {
+  padding: 10px 26px;
+  display: flex;
+  outline: 0;
+  font-weight: 500;
+  line-height: 1.25rem;
+  color: #202124;
+  text-overflow: ellipsis;
+  vertical-align: middle;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.createCol {
+  border-radius: 0 25px 25px 0;
+  cursor: pointer;
+}
+
+.btnCol {
+  background-color: rgba(43, 113, 226, 0.106);
+  border-radius: 0 25px 25px 0;
+  cursor: pointer;
+}
+
+@media (max-width: 1024px) {
+  .VerticalCol {
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .createBtn {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .createBtn {
+    font-size: 1rem;
+    padding: 25px 8px;
+  }
+
+  .createBtn:hover {
+    border: 1px solid rgba(0, 60, 128, 0.294);
+    padding: 24px 8px;
+  }
+
+  .contactBtn {
+    font-size: .9rem;
+    padding: 8px 0 8px 16px;
+  }
+}

@@ -1,4 +1,5 @@
 import ContactsList from "../features/contacts/ContactsList";
+import ContactsVertical from "../features/contacts/ContactsVertical";
 import Header from "./Header";
 import { Col, Row } from "reactstrap";
 
@@ -7,10 +8,10 @@ const Main = () => {
     <>
       <Header />
       <Row>
-        <Col sm='4'>
-          {/* < ContactVertical /> */}
+        <Col xs='6' sm='5' md='4' lg='3'className="VerticalCol">
+          <ContactsVertical />
         </Col>
-        <Col>
+        <Col xs='6' sm='7' md='8' lg='7'>
           <ContactsList />
         </Col>
       </Row>

@@ -1,5 +1,4 @@
 import {
-  Button,
   Card,
   CardBody,
   CardSubtitle,
@@ -10,7 +9,6 @@ import {
   Row,
 } from "reactstrap";
 import { useState } from "react";
-import "./ContactCard.css";
 
 const ContactCard = (props) => {
   const { firstName, lastName, phone, email } = { ...props.contact };
@@ -20,9 +18,9 @@ const ContactCard = (props) => {
   const toggle = () => setIsOpen(!isOpen);
 
   return (
-    <Card>
-      <CardBody>
-        <Row  className='m-0 p-0'>
+    <Card className='contactCard'>
+      <CardBody className='pe-0'>
+        <Row className='m-0 p-0'>
           <Col md='3' className='p-1'>
             <span
               className='initial rounded-circle border bg-light px-2 py-1 text-success'
@@ -44,9 +42,31 @@ const ContactCard = (props) => {
               </CardText>
             </Collapse>
           </Col>
-          <Col xs='2'>
-            <a className='text-primary' onClick={toggle}>
-              <i class='fa fa-angle-double-down' aria-hidden='true'></i>
+          <Col xs='3'>
+            <a
+              className='text-primary cardBtn p-1 p-xl-2'
+              onClick={toggle}
+              aria-label='See More'
+            >
+              <i className='fa fa-angle-double-down' aria-hidden='true'></i>
+            </a>
+            <a
+              className='cardBtn p-1 p-xl-2'
+              onClick={toggle}
+              aria-label='Edit Contact'
+            >
+              <span className='hide'>
+                <i className='fa fa-pencil' aria-hidden='true'></i>
+              </span>
+            </a>
+            <a
+              className='cardBtn p-1 p-xl-2'
+              onClick={toggle}
+              aria-label='Delete Contact'
+            >
+              <span className='hide'>
+                <i className='fa fa-trash-o hide' aria-hidden='true'></i>
+              </span>
             </a>
           </Col>
         </Row>
