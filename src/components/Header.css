@@ -1,4 +1,6 @@
 .logo {
-  font-size: 26px !important;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 28px !important;
   font-weight: 500;
+  letter-spacing: 1px;
 }

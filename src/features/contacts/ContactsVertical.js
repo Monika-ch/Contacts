@@ -22,7 +22,7 @@ const ContactsVertical = () => {
           role='button'
           aria-pressed='true'
         >
-          <i className='fa fa-user-o pe-2 pe-md-3' aria-hidden='true'></i>
+          <i className='fa fa-user-o pe-2 pe-md-3 ps-md-2' aria-hidden='true'></i>
           <span className='pe-4 pe-md-5' aria-label='Contacts'>
             Contacts
           </span>

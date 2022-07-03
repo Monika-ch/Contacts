@@ -9,7 +9,7 @@
   padding: 25px 26px;
   display: flex;
   outline: 0;
-  font-size: 1.32rem;
+  font-size: 1.25rem;
   font-weight: 500;
   line-height: 1.25rem;
   color: #202124;
@@ -81,7 +81,7 @@
   }
 
   .contactBtn {
-    font-size: .9rem;
+    font-size: 0.9rem;
     padding: 8px 0 8px 16px;
   }
 }
