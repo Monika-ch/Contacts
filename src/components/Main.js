@@ -17,19 +17,12 @@ const Main = () => {
           <Routes>
             <Route path='/' element={<ContactsList />} />
             <Route path='create' element={<CreatePage />} />
-            <Route path='edit' element={<CreatePage />} />
+            <Route path='edit'>
+              <Route path=':id' element={<CreatePage />} />
+            </Route>
           </Routes>
         </Col>
       </Row>
-      {/* <Row>
-        <Col xs='6' sm='5' md='4' lg='3' className='VerticalCol'>
-          <ContactsVertical />
-        </Col>
-        <Col xs='6' sm='7' md='8' lg='7'>
-          <CreatePage />
-          <ContactsList />
-        </Col>
-      </Row> */}
     </>
   );
 };

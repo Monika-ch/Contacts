@@ -1,10 +1,9 @@
-import { CONTACTS } from "../../app/shared/CONTACTS";
 import { Col } from "reactstrap";
 import { NavLink } from "react-router-dom";
 import "./ContactsVertical.css";
-
+import { useSelector } from "react-redux";
 const ContactsVertical = () => {
-  const contactsCount = CONTACTS.length;
+  const contactsCount = useSelector((state) => state.contactList).length;
 
   return (
     <div className='Vertical pb-5 mt-1'>

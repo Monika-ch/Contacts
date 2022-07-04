@@ -11,9 +11,11 @@ import {
 import { Link } from "react-router-dom";
 import DeleteContactModal from "../../components/DeleteContact";
 import { useState } from "react";
-
+import { useDispatch } from "react-redux";
+import { DeleteContact } from "../../app/contactList.actions";
+import { Redirect } from "react-router-dom";
 const ContactCard = (props) => {
-  const { firstName, lastName, phone, email } = { ...props.contact };
+  const { id, firstName, lastName, phone, email } = { ...props.contact };
   const initial = firstName[0].toUpperCase();
 
   const [isOpen, setIsOpen] = useState(false);
@@ -21,7 +23,11 @@ const ContactCard = (props) => {
 
   const toggle = () => setIsOpen(!isOpen);
   const toggleDeleteModal = () => setIsDeleteModalOpen(!isDeleteModalOpen);
-
+  const dispatch = useDispatch();
+  const newTo = {
+    pathname: "/edit/" + id,
+    param1: id,
+  };
   return (
     <>
       <Card className='contactCard'>
@@ -65,7 +71,7 @@ const ContactCard = (props) => {
                 </li>
 
                 <li>
-                  <Link to='/edit'>
+                  <Link to={newTo}>
                     <a
                       className='cardBtn p-1 p-xl-2'
                       role='button'
@@ -79,21 +85,16 @@ const ContactCard = (props) => {
                   </Link>
                 </li>
                 <li>
-                  <Link to='/edit'>
-                    <a
-                      className='cardBtn p-1 p-xl-2'
-                      role='button'
-                      onClick={toggleDeleteModal}
-                      aria-label='Delete Contact'
-                    >
-                      <span className='hide'>
-                        <i
-                          className='fa fa-trash-o hide'
-                          aria-hidden='true'
-                        ></i>
-                      </span>
-                    </a>
-                  </Link>
+                  <a
+                    className='cardBtn p-1 p-xl-2'
+                    role='button'
+                    onClick={toggleDeleteModal}
+                    aria-label='Delete Contact'
+                  >
+                    <span className='hide'>
+                      <i className='fa fa-trash-o hide' aria-hidden='true'></i>
+                    </span>
+                  </a>
                 </li>
               </ul>
             </Col>
@@ -103,7 +104,7 @@ const ContactCard = (props) => {
       <DeleteContactModal
         isDeleteModalOpen={isDeleteModalOpen}
         toggleDeleteModal={toggleDeleteModal}
-        onConfirmation={() => {}}
+        onConfirmation={() => dispatch(DeleteContact({ id: id }))}
       />
     </>
   );

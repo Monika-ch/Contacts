@@ -1,42 +1,23 @@
 export const validateCreateContact = (values) => {
   const errors = {};
-  const { firstName, phoneNum, email } = { ...values };
+  const { firstName, phone, email } = { ...values };
 
-    if (!firstName) {
-      errors.firstName = "Required";
-    } else if (values.firstName.length < 2) {
-      errors.firstName = "Must be at least 2 characters.";
-    } else if (values.firstName.length > 15) {
-      errors.firstName = "Must be 15 characters or less.";
-    }
+  if (!firstName) {
+    errors.firstName = "Required";
+  } else if (values.firstName.length < 2) {
+    errors.firstName = "Must be at least 2 characters.";
+  } else if (values.firstName.length > 15) {
+    errors.firstName = "Must be 15 characters or less.";
+  }
 
-    const reg = /^\d+$/;
-    if (!reg.test(phoneNum)) {
-      errors.phoneNum = "The phone number should contain only numbers.";
-    }
+  const reg = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
+  if (!reg.test(phone)) {
+    errors.phone = "The phone number should contain only numbers.";
+  }
 
-    if (!email.includes("@")) {
-      errors.email = "Email should contain a @";
-    }
-
-//  if (!values.firstName) {
-//    errors.firstName = "Required";
-//  } else if (values.firstName.length < 2) {
-//    errors.firstName = "Must be at least 2 characters.";
-//  } else if (values.firstName.length > 15) {
-//    errors.firstName = "Must be 15 characters or less";
-//  }
-
-//   const reg = /^\d+$/;
-//    if (!reg.test(values.phoneNum)) {
-//      errors.phoneNum = "The phone number should contain only numbers.";
-//    }
-  
-//   if (!values.email.includes("@")) {
-//     errors.email = "Email should contain a @";
-//   }
+  if (!email.includes("@")) {
+    errors.email = "Email should contain a @";
+  }
 
   return errors;
 };
-
-// export default validateCreateContact;
