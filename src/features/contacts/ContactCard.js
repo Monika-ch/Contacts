@@ -8,6 +8,7 @@ import {
   Collapse,
   Row,
 } from "reactstrap";
+import { Link } from "react-router-dom";
 import DeleteContactModal from "../../components/DeleteContact";
 import { useState } from "react";
 
@@ -48,34 +49,53 @@ const ContactCard = (props) => {
               </Collapse>
             </Col>
             <Col xs='3'>
-              <a
-                className='text-primary cardBtn p-1 p-xl-2'
-                role='button'
-                onClick={toggle}
-                aria-label='See More'
-              >
-                <i className='fa fa-angle-double-down' aria-hidden='true'></i>
-              </a>
-              <a
-                className='cardBtn p-1 p-xl-2'
-                role='button'
-                onClick={toggle}
-                aria-label='Edit Contact'
-              >
-                <span className='hide'>
-                  <i className='fa fa-pencil' aria-hidden='true'></i>
-                </span>
-              </a>
-              <a
-                className='cardBtn p-1 p-xl-2'
-                role='button'
-                onClick={toggleDeleteModal}
-                aria-label='Delete Contact'
-              >
-                <span className='hide'>
-                  <i className='fa fa-trash-o hide' aria-hidden='true'></i>
-                </span>
-              </a>
+              <ul className='list-unstyled d-flex no-wrap'>
+                <li>
+                  <a
+                    className='text-primary cardBtn p-1 p-xl-2'
+                    role='button'
+                    onClick={toggle}
+                    aria-label='See More'
+                  >
+                    <i
+                      className='fa fa-angle-double-down'
+                      aria-hidden='true'
+                    ></i>
+                  </a>
+                </li>
+
+                <li>
+                  <Link to='/edit'>
+                    <a
+                      className='cardBtn p-1 p-xl-2'
+                      role='button'
+                      onClick={toggle}
+                      aria-label='Edit Contact'
+                    >
+                      <span className='hide'>
+                        <i className='fa fa-pencil' aria-hidden='true'></i>
+                      </span>
+                    </a>
+                  </Link>
+                </li>
+                <li>
+                  <Link to='/edit'>
+                    <a
+                      className='cardBtn p-1 p-xl-2'
+                      role='button'
+                      onClick={toggleDeleteModal}
+                      aria-label='Delete Contact'
+                    >
+                      <span className='hide'>
+                        <i
+                          className='fa fa-trash-o hide'
+                          aria-hidden='true'
+                        ></i>
+                      </span>
+                    </a>
+                  </Link>
+                </li>
+              </ul>
             </Col>
           </Row>
         </CardBody>
