@@ -28,7 +28,7 @@ export const ContactListReducer = (
     case EDIT_CONTACT:
       let newList = [];
       for (let i = 0; i < state.contactList.length; i++) {
-        if (state.contactList[i].id === action.payload.id) {
+        if (state.contactList[i].id.toString() === action.payload.id) {
           newList.push(action.payload);
         } else {
           newList.push(state.contactList[i]);

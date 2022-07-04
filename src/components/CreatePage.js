@@ -13,15 +13,14 @@ const CreatePage = (props) => {
   const contactList = useSelector((state) => state.contactList);
   console.log(contactList.filter((x) => x.id == id)[0]);
   const { firstName, lastName, email, phone } = isEditMode
-    ? contactList.filter((x) => x.id == id)[0]
+    ? contactList.filter((x) => x.id.toString() === id)[0]
     : {};
   const dispatch = useDispatch();
   const handleSubmit = (values) => {
     let dispatchAction = isEditMode ? EditContact : CreateContact;
-    dispatch(dispatchAction({ ...values, id: isEditMode ? props.id : uuid() }));
+    dispatch(dispatchAction({ ...values, id: isEditMode ? id : uuid() }));
   };
 
-  // const { firstName, lastName, phone, email } = { ...props };
   return (
     <Formik
       initialValues={{
@@ -32,7 +31,7 @@ const CreatePage = (props) => {
       }}
       onSubmit={(values, actions) => {
         handleSubmit(values);
-        navigate("/", { state: contactList });
+        navigate("/");
       }}
       validate={validateCreateContact}
     >
@@ -110,7 +109,7 @@ const CreatePage = (props) => {
               color='secondary'
               className='me-4 btn btn-sm'
               aria-label='Cancel'
-              onClick={() => navigate("/", { state: contactList })}
+              onClick={() => navigate("/")}
             >
               Cancel
             </Button>
