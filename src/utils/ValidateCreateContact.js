@@ -1,7 +1,7 @@
 export const validateCreateContact = (values) => {
   const errors = {};
   const { firstName, phone, email } = { ...values };
-
+  console.log(firstName);
   if (!firstName) {
     errors.firstName = "Required";
   } else if (values.firstName.length < 2) {
@@ -15,7 +15,7 @@ export const validateCreateContact = (values) => {
     errors.phone = "The phone number should contain only numbers.";
   }
 
-  if (!email.includes("@")) {
+  if (!email || !email.includes("@")) {
     errors.email = "Email should contain a @";
   }
 

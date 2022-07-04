@@ -110,7 +110,7 @@ const CreatePage = (props) => {
               color='secondary'
               className='me-4 btn btn-sm'
               aria-label='Cancel'
-              onClick={navigate("/", { state: contactList })}
+              onClick={() => navigate("/", { state: contactList })}
             >
               Cancel
             </Button>
