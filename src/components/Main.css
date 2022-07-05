@@ -1,0 +1,12 @@
+.VerticalCol {
+  border-right: 1px solid #0000000e;
+  margin-right: 120px;
+  background-color: #d6d6d60e;
+}
+
+@media (max-width: 560px) {
+  .VerticalCol {
+    margin-right: 0;
+  }
+
+}

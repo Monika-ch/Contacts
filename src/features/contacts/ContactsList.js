@@ -14,7 +14,7 @@ const ContactsList = () => {
     })
     .map((contact) => {
       return (
-        <Row className='ps-5'>
+        <Row className='p-0 ps-sm-5'>
           <Col md='8' lg='8' xl='6' className='contactCardCol' key={contact.id}>
             <ContactCard contact={contact} />
           </Col>

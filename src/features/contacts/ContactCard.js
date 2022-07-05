@@ -31,9 +31,9 @@ const ContactCard = (props) => {
   return (
     <>
       <Card className='contactCard'>
-        <CardBody className='pe-0'>
-          <Row className='m-0 p-0'>
-            <Col md='3' className='p-1'>
+        <CardBody className='p-0 pe-sm-0'>
+          <Row className='m-0 p-0 pt-sm-2'>
+            <Col xs='1' md='3' className='p-1'>
               <span
                 className='initial rounded-circle border bg-light px-2 py-1 text-success'
                 aria-hidden='true'
@@ -41,7 +41,7 @@ const ContactCard = (props) => {
                 {initial}
               </span>
             </Col>
-            <Col>
+            <Col xs='7' sm='6'>
               <CardTitle tag='h6' aria-label={`${firstName} ${lastName}`}>
                 {`${firstName} ${lastName}`}
               </CardTitle>
@@ -49,12 +49,12 @@ const ContactCard = (props) => {
                 {phone}
               </CardSubtitle>
               <Collapse isOpen={isOpen}>
-                <CardText className='mt-2 email' aria-label={email}>
+                <CardText className='mt-2 email pb-sm-2' aria-label={email}>
                   {email}
                 </CardText>
               </Collapse>
             </Col>
-            <Col xs='3'>
+            <Col xs='3' className='p-0 p-sm-2'>
               <ul className='list-unstyled d-flex no-wrap'>
                 <li>
                   <a

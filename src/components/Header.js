@@ -7,7 +7,7 @@ const Header = () => {
       <NavbarBrand className='logo'>
         <a className='btn pb-0'>
           <i
-            className='fa fa-3x fa-user-circle-o text-light bg-primary pe-1 pb-4'
+            className='fa fa-2x fa-sm-3x fa-user-circle-o text-light bg-primary pb-3 pe-sm-1 pb-sm-4'
             aria-hidden='true'
           ></i>
         </a>
