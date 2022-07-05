@@ -6,7 +6,7 @@ import { CreateContact, EditContact } from "../app/contactList.actions";
 import { v4 as uuid } from "uuid";
 import { useParams, useNavigate } from "react-router-dom";
 
-const CreatePage = (props) => {
+const CreateEditPage = (props) => {
   const { id } = { ...useParams() };
   const navigate = useNavigate();
   const isEditMode = id !== undefined;
@@ -48,7 +48,7 @@ const CreatePage = (props) => {
             />
           </Col>
           <ErrorMessage name='firstName'>
-            {(msg) => <p className='text-danger'>{msg}</p>}
+            {(msg) => <p className='text-danger offset-md-2'>{msg}</p>}
           </ErrorMessage>
         </FormGroup>
 
@@ -73,7 +73,7 @@ const CreatePage = (props) => {
             <Field name='phone' placeholder='Phone' className='form-control' />
           </Col>
           <ErrorMessage name='phone'>
-            {(msg) => <p className='text-danger'>{msg}</p>}
+            {(msg) => <p className='text-danger offset-md-2'>{msg}</p>}
           </ErrorMessage>
         </FormGroup>
 
@@ -89,13 +89,13 @@ const CreatePage = (props) => {
             />
           </Col>
           <ErrorMessage name='email'>
-            {(msg) => <p className='text-danger'>{msg}</p>}
+            {(msg) => <p className='text-danger offset-md-2'>{msg}</p>}
           </ErrorMessage>
         </FormGroup>
 
         {/* BUTTONS */}
         <FormGroup row>
-          <Col md={{ size: 10, offset: 3 }}>
+          <Col md={{ size: 10, offset: 2 }}>
             <Button
               type='submit'
               color='primary'
@@ -120,4 +120,4 @@ const CreatePage = (props) => {
   );
 };
 
-export default CreatePage;
+export default CreateEditPage;

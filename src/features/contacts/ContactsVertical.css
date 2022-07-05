@@ -17,7 +17,7 @@
 }
 
 .createBtn:hover {
-  border: 1px solid rgba(0, 60, 128, 0.294);
+  border: 1px solid #003c804b;
   border-left: 10px solid green;
   padding: 24px 26px;
   border-radius: 0 6px 6px 0;
@@ -33,7 +33,7 @@
   outline: 0;
   font-weight: 500;
   line-height: 1.25rem;
-  color: #202124;
+  color: #0b62e4;
   text-overflow: ellipsis;
   vertical-align: middle;
   white-space: nowrap;
@@ -46,7 +46,7 @@
 }
 
 .btnCol {
-  background-color: rgba(43, 113, 226, 0.106);
+  background-color: #2b71e21b;
   border-radius: 0 25px 25px 0;
   cursor: pointer;
 }

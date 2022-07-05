@@ -13,7 +13,7 @@ import DeleteContactModal from "../../components/DeleteContact";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { DeleteContact } from "../../app/contactList.actions";
-import { Redirect } from "react-router-dom";
+
 const ContactCard = (props) => {
   const { id, firstName, lastName, phone, email } = { ...props.contact };
   const initial = firstName[0].toUpperCase();
@@ -30,7 +30,7 @@ const ContactCard = (props) => {
   };
   return (
     <>
-      <Card className='contactCard'>
+      <Card className='contactCard' tabIndex={0}>
         <CardBody className='p-0 pe-sm-0'>
           <Row className='m-0 p-0 pt-sm-2'>
             <Col xs='1' md='3' className='p-1'>
@@ -56,7 +56,7 @@ const ContactCard = (props) => {
             </Col>
             <Col xs='3' className='p-0 p-sm-2'>
               <ul className='list-unstyled d-flex no-wrap'>
-                <li>
+                <li tabIndex='0'>
                   <a
                     className='text-primary cardBtn p-1 p-xl-2'
                     role='button'

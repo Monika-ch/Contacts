@@ -3,7 +3,13 @@ import "./Header.css";
 
 const Header = () => {
   return (
-    <Navbar dark color='primary' sticky='top' expand='md' className='pb-0 pt-1'>
+    <Navbar
+      dark
+      color='primary'
+      sticky='top'
+      expand='md'
+      className='pb-0 pt-1'
+    >
       <NavbarBrand className='logo'>
         <a className='btn pb-0'>
           <i

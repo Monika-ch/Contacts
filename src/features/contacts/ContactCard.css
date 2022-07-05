@@ -35,11 +35,15 @@
   color: red;
 }
 
-.hide {
+.contactCard .hide {
   visibility: hidden;
 }
 
 .contactCard:hover .hide {
+  visibility: visible;
+}
+
+.hide:focus-visible {
   visibility: visible;
 }
 
@@ -52,7 +56,7 @@
   .contactCardCol {
     margin: 4px 0;
     padding: 0;
-    font-size: .85rem;
+    font-size: 0.85rem;
   }
   .phone {
     font-weight: 500;

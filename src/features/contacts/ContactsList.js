@@ -14,9 +14,15 @@ const ContactsList = () => {
     })
     .map((contact) => {
       return (
-        <Row className='p-0 ps-sm-5'>
-          <Col md='8' lg='8' xl='6' className='contactCardCol' key={contact.id}>
-            <ContactCard contact={contact} />
+        <Row className='p-0 ps-sm-5 text-center' key={contact.id + "Row"}>
+          <Col
+            md='8'
+            lg='8'
+            xl='6'
+            className='contactCardCol'
+            key={contact.id + "Col"}
+          >
+            <ContactCard contact={contact} key={contact.id + "Card"} />
           </Col>
         </Row>
       );
